@@ -181,3 +181,4 @@ function menu() {
 menu();
 
 
+console.log(office1.getAllEmpolyees())

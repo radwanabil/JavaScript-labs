@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="form">
+        <form action="">
+
+            <input type="text" id="name" placeholder="username" />
+
+
+            <br>
+            <br>
+            <input type="text" placeholder="password" id="password" />
+            <br>
+            <br>
+            <input type="submit" value="LOGIN" onclick="Validate(this.form)" id="login" />
+            <br>
+            <span id="register">Not registered? </span> <span id="create">Create an account</span>
+        </form>
+    </div>
+    <script>
+        document.body.style.backgroundColor = "LightGreen";
+        var form = document.querySelector(".form");
+        form.style.backgroundColor = "White";
+        form.style.margin = "200px auto";
+        form.style.border = "1px solid black";
+        form.style.padding = "20px";
+        form.style.width = "280px";
+        form.style.height = "220px";
+        form.style.display = "flex";
+        form.style.justifyContent = "center";
+        form.style.border = "none";
+        form.style.boxShadow = "0 4px 8px 0 rgba(0, 0, 0, 0.2)";
+
+        var btn = document.getElementById("login");
+        btn.style.backgroundColor = "#2eb82e";
+        btn.style.color = "white";
+        btn.style.border = "none";
+        btn.style.width = "220px";
+        btn.style.height = "35px";
+        btn.style.margin = "0px auto";
+        btn.style.padding = "7px";
+        btn.style.marginBottom = "10px";
+
+
+        var name = document.getElementById("name");
+
+        var pass = document.getElementById("password");
+        var input = document.querySelectorAll("input");
+        input[0].style.backgroundColor = "#f2f2f2";
+        input[1].style.backgroundColor = "#f2f2f2";
+        input[0].style.padding = "10px";
+        input[1].style.padding = "10px";
+        input[0].style.border = "none";
+        input[1].style.border = "none";
+        input[0].style.width = "200px";
+        input[1].style.width = "200px";
+        input[0].style.height = "25px";
+        input[1].style.height = "25px";
+        input[0].style.marginTop = "10px";
+
+
+        var spanElements = document.querySelectorAll("span");
+        spanElements[1].style.color = "#2eb82e";
+        spanElements[0].style.fontSize = "12px";
+        spanElements[1].style.fontSize = "12px";
+
+        spanElements[0].style.marginLeft = "35px";
+        function Validate(form) {
+            var username = document.getElementById("name").value;
+
+            var password = document.getElementById("password").value;
+            var flagUsername = 0;
+            var flagPassword = 0;
+            console.log(username);
+            console.log(password);
+            if (username === "admin") {
+                flagUsername = 1;
+            }
+            if (password === "123") {
+                flagPassword = 1;
+            }
+
+            if (flagUsername == 0 && flagPassword == 0) {
+                alert("incorrect username and password");
+            } else if (flagPassword == 0) {
+                alert("Not registered");
+            } else if (flagUsername == 0) {
+                alert("Not registered");
+            } else {
+                alert("Welcome");
+            }
+        }
+    </script>
+</body>
+
+</html>

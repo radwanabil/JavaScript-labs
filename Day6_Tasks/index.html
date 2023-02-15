@@ -79,25 +79,21 @@
             var password = document.getElementById("password").value;
             var flagUsername = 0;
             var flagPassword = 0;
+            var regexUsername = /^(admin)$/;
+            var regexPassword = /^(123)$/;
             console.log(username);
             console.log(password);
-            if (username === "admin") {
-                flagUsername = 1;
-            }
-            if (password === "123") {
-                flagPassword = 1;
-            }
+            console.log(regexUsername.test(username));
+            console.log(regexPassword.test(password));
 
-            if (flagUsername == 0 && flagPassword == 0) {
-                alert("incorrect username and password");
-            } else if (flagPassword == 0) {
-                alert("Not registered");
-            } else if (flagUsername == 0) {
-                alert("Not registered");
-            } else {
+            if (regexUsername.test(username) && regexPassword.test(password)) {
                 alert("Welcome");
+            } else {
+                alert("not registered");
             }
         }
+
+
     </script>
 </body>
 
